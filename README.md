@@ -62,6 +62,7 @@ Services are disabled by default to free up memory. If you require a service, ru
 | Bluetooth | Wireless Bluetooth connectivity for peripherals and devices |
 | LPD (Line Printer Daemon) | Print service for network printing support |
 | ModemManager | Mobile broadband and modem device management |
+| Snapd | Snap package manager daemon |
 | WirePlumber | Multimedia framework for GStreamer pipeline management |
 
 ### NVIDIA Services

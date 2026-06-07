@@ -1,1 +1,67 @@
-test
+# Jetson Orin Nano - Memory Optimization Scripts (JetPack 7.2)
+
+Scripts to free up memory on Jetson Orin Nano after upgrading from JetPack 6.2 to 7.2 for running large LLM models with larger context windows.
+
+## Purpose
+
+These scripts optimize memory by:
+- Adding swap file to extend virtual memory
+- Disabling unnecessary desktop environment
+- Disabling background services that consume memory
+
+Mainly intended for running LLM inference tools like [llama.cpp](https://github.com/ggerganov/llama.cpp) or [Ollama](https://ollama.com/).
+
+## Services
+
+Services are disabled by default to free up memory. If you require a service, run the corresponding `enable_*.sh` script to re-enable it. Use the `disable_*.sh` script to disable it again when needed.
+
+## Structure
+
+```
+├── docker/           - Docker containerd enable/disable
+├── nvidia/           - NVIDIA nvargus-daemon enable/disable
+├── services/         - General system services (bluetooth, lpd, ModemManager, wireplumber)
+└── system/           - System configuration (add_swapfile, disable_desktop_environment)
+```
+
+## Usage
+
+All scripts require root privileges. Run with `sudo`:
+
+```bash
+sudo ./script_name.sh
+```
+
+### Memory Optimization (Run First)
+
+| Script | Description |
+|--------|-------------|
+| `system/add_swapfile.sh` | Create swap file for extended virtual memory |
+| `system/disable_desktop_environment.sh` | Disable GUI desktop environment |
+
+### Services Management
+
+Enable or disable system services as needed:
+
+| Service | Status |
+|---------|--------|
+| Bluetooth | Enable/Disable |
+| LPD (Line Printer Daemon) | Enable/Disable |
+| ModemManager | Enable/Disable |
+| WirePlumber | Enable/Disable |
+
+### NVIDIA Services
+
+| Service | Status |
+|---------|--------|
+| nvargus-daemon | Enable/Disable |
+
+### Docker
+
+| Service | Status |
+|---------|--------|
+| Docker & containerd | Enable/Disable |
+
+## License
+
+This project is licensed under the [Apache License 2.0](LICENSE).

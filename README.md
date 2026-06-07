@@ -19,20 +19,6 @@ These scripts optimize memory by:
 
 Mainly intended for running LLM inference tools like [llama.cpp](https://github.com/ggerganov/llama.cpp) or [Ollama](https://ollama.com/).
 
-## llama.cpp Installation
-
-The installation script for llama.cpp can be found in the `llm_scripts/` folder:
-
-```bash
-llm_scripts/install_llamacpp.sh
-```
-
-Run with `sudo`:
-
-```bash
-sudo ./llm_scripts/install_llamacpp.sh
-```
-
 ## Monitoring
 
 If you want to use `jtop` (Jetson system monitoring tool), you have to install it first:
@@ -41,10 +27,6 @@ If you want to use `jtop` (Jetson system monitoring tool), you have to install i
 sudo apt install python3-pip
 pip3 install jtop
 ```
-
-## Services
-
-Services are disabled by default to free up memory. If you require a service, run the corresponding `enable_*.sh` script to re-enable it. Use the `disable_*.sh` script to disable it again when needed.
 
 ## Structure
 
@@ -100,6 +82,20 @@ Services are disabled by default to free up memory. If you require a service, ru
 
 ```bash
 sudo reboot
+```
+
+## llama.cpp Installation
+
+The installation script for llama.cpp can be found in the `llm_scripts/` folder:
+
+```bash
+llm_scripts/install_llamacpp.sh
+```
+
+Run with `sudo`:
+
+```bash
+sudo ./llm_scripts/install_llamacpp.sh
 ```
 
 ## License

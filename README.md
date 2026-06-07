@@ -81,7 +81,7 @@ Services are disabled by default to free up memory. If you require a service, ru
 
 ## ⚠️ Important: Reboot Required
 
-**Always reboot your Jetson after running any enable/disable scripts.**
+**Reboot your Jetson after running any enable/disable scripts to confirm the update persistence.**
 
 ```bash
 sudo reboot

@@ -18,3 +18,8 @@ awk '
 /^SwapTotal:/   { printf "SwapTotal:     %s kB (%.1f GB)\n", $2, $2/1048576 }
 /^SwapFree:/    { printf "SwapFree:      %s kB (%.1f GB)\n", $2, $2/1048576 }
 ' /proc/meminfo
+
+echo ""
+echo "=== Top 5 Processes by Memory ==="
+printf "%-20s %15s %s\n" "USER" "MEM (MB)" "COMMAND"
+ps aux --sort=-%mem | tail -n+2 | awk 'NR<=5 { printf "%-20s %8.1f MB  %s\n", $1, $6/1024, $11 }'

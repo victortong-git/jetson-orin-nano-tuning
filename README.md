@@ -52,6 +52,7 @@ sudo ./script_name.sh
 |--------|-------------|
 | `system/add_swapfile.sh` | Create swap file for extended virtual memory |
 | `system/disable_desktop_environment.sh` | Disable GUI desktop environment |
+| `system/show_memory.sh` | Display current memory usage |
 
 ### Services Management
 

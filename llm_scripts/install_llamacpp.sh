@@ -21,7 +21,7 @@ if [ -d "$LLAMA_DIR" ]; then
   echo "llama.cpp already exists at $LLAMA_DIR, pulling latest..."
   git -C "$LLAMA_DIR" pull --ff-only
 else
-  git clone --depth 1 https://github.com/ggerganov/llama.cpp.git "$LLAMA_DIR"
+  git clone --depth 1 https://github.com/ggml-org/llama.cpp.git "$LLAMA_DIR"
 fi
 
 echo "[3/5] Configuring with CUDA for Jetson Orin Nano (aarch64)..."

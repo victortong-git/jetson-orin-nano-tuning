@@ -21,7 +21,7 @@ These scripts optimize memory by:
 - Disabling unnecessary desktop environment
 - Disabling background services that consume memory
 
-Mainly intended for running LLM inference tools like [llama.cpp](https://github.com/ggerganov/llama.cpp) or [Ollama](https://ollama.com/).
+Mainly intended for running LLM inference tools like [Ollama](https://ollama.com/).
 
 ## Results
 
@@ -42,7 +42,7 @@ pip3 install jtop
 
 ```
 ├── docker/           - Docker containerd enable/disable
-├── llm_scripts/      - llama.cpp installation script
+├── llm_scripts/      - LLM utility scripts
 ├── nvidia/           - NVIDIA nvargus-daemon enable/disable
 ├── services/         - General system services (bluetooth, lpd, ModemManager, wireplumber)
 └── system/           - System configuration (add_swapfile, disable_desktop_environment)
@@ -94,20 +94,6 @@ Services are disabled by default to free up memory. If you require a service, ru
 
 ```bash
 sudo reboot
-```
-
-## llama.cpp Installation
-
-The installation script for llama.cpp can be found in the `llm_scripts/` folder:
-
-```bash
-llm_scripts/install_llamacpp.sh
-```
-
-Run with `sudo`:
-
-```bash
-sudo ./llm_scripts/install_llamacpp.sh
 ```
 
 ## License

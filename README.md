@@ -19,6 +19,15 @@ These scripts optimize memory by:
 
 Mainly intended for running LLM inference tools like [llama.cpp](https://github.com/ggerganov/llama.cpp) or [Ollama](https://ollama.com/).
 
+## Monitoring
+
+If you want to use `jtop` (Jetson system monitoring tool), you have to install it first:
+
+```bash
+sudo apt install python3-pip
+pip3 install jtop
+```
+
 ## Services
 
 Services are disabled by default to free up memory. If you require a service, run the corresponding `enable_*.sh` script to re-enable it. Use the `disable_*.sh` script to disable it again when needed.

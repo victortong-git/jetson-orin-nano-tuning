@@ -2,6 +2,14 @@
 
 Scripts to free up memory on Jetson Orin Nano after upgrading from JetPack 6.2 to 7.2 for running large LLM models with larger context windows.
 
+## ⚠️ Boot Failure After Upgrade
+
+If you fail to boot after upgrading from JetPack 6.2 to 7.2:
+
+1. Check if the firmware was updated from **R36 to R39**
+2. If not, upgrade the firmware to R39 first
+3. **Brand new devices** should upgrade firmware to **R36 first** before upgrading to 7.2
+
 ## Purpose
 
 These scripts optimize memory by:

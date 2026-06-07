@@ -23,6 +23,12 @@ These scripts optimize memory by:
 
 Mainly intended for running LLM inference tools like [llama.cpp](https://github.com/ggerganov/llama.cpp) or [Ollama](https://ollama.com/).
 
+## Results
+
+After running all memory optimization scripts and rebooting, you should have approximately **6.7 GB available** out of 7.5 GB total RAM with 16 GB swap.
+
+Use `./show_memory.sh` to verify your current memory usage.
+
 ## Monitoring
 
 If you want to use `jtop` (Jetson system monitoring tool), you have to install it first:

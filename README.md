@@ -10,6 +10,10 @@ If you fail to boot after upgrading from JetPack 6.2 to 7.2:
 2. If not, upgrade the firmware to R39 first
 3. **Brand new devices** should upgrade firmware to **R36 first** before upgrading to 7.2
 
+## Precautions
+
+**⚠️ Run `system/disable_desktop_environment.sh` via SSH before disabling.** Disabling the desktop environment locally will disconnect your desktop session and prevent further GUI access. Use SSH to run this script, then reboot.
+
 ## Purpose
 
 These scripts optimize memory by:

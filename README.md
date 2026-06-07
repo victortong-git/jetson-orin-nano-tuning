@@ -58,26 +58,34 @@ sudo ./script_name.sh
 
 ### Services Management
 
-Enable or disable system services as needed:
+Services are disabled by default to free up memory. If you require a service, run the corresponding `enable_*.sh` script to re-enable it. Use the `disable_*.sh` script to disable it again when needed.
 
-| Service | Status |
-|---------|--------|
-| Bluetooth | Enable/Disable |
-| LPD (Line Printer Daemon) | Enable/Disable |
-| ModemManager | Enable/Disable |
-| WirePlumber | Enable/Disable |
+| Service | Description |
+|---------|-------------|
+| Bluetooth | Wireless Bluetooth connectivity for peripherals and devices |
+| LPD (Line Printer Daemon) | Print service for network printing support |
+| ModemManager | Mobile broadband and modem device management |
+| WirePlumber | Multimedia framework for GStreamer pipeline management |
 
 ### NVIDIA Services
 
-| Service | Status |
-|---------|--------|
-| nvargus-daemon | Enable/Disable |
+| Service | Description |
+|---------|-------------|
+| nvargus-daemon | NVIDIA camera and video capture service for ISP |
 
 ### Docker
 
-| Service | Status |
-|---------|--------|
-| Docker & containerd | Enable/Disable |
+| Service | Description |
+|---------|-------------|
+| Docker & containerd | Container runtime for running Docker containers |
+
+## ⚠️ Important: Reboot Required
+
+**Always reboot your Jetson after running any enable/disable scripts.** Changes will not take full effect until you reboot:
+
+```bash
+sudo reboot
+```
 
 ## License
 

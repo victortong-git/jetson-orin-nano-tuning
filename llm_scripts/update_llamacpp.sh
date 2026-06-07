@@ -73,22 +73,20 @@ cmake -S "$LLAMA_DIR" -B "$BUILD_DIR" \
   "${CUDA_OPTS[@]}" \
   "${COMMON_OPTS[@]}" \
   -DGGML_METAL=OFF \
-  -DGGML_CCACHE=ON \
-  -DCMAKE_INSTALL_PREFIX="$BUILD_DIR/install"
+  -DGGML_CCACHE=ON
 
 echo "[4/5] Building with $(nproc) parallel jobs..."
 cmake --build "$BUILD_DIR" --config Release -j "$(nproc)"
 
-echo "[5/5] Installing..."
-cmake --install "$BUILD_DIR" --config Release
-
+echo "[5/5] Build complete!"
 echo ""
-echo "=== llama.cpp build complete ==="
-echo "Source:     $LLAMA_DIR"
-echo "Binaries:   $BUILD_DIR/bin/"
-echo "Install:    $BUILD_DIR/install/"
+echo "=== llama.cpp build summary ==="
+echo "Source:   $LLAMA_DIR"
+echo "Binaries: $BUILD_DIR/bin/"
 echo ""
-echo "Key binaries:"
-ls -lh "$BUILD_DIR/bin/"llama-* 2>/dev/null || ls -lh "$BUILD_DIR/bin/" 2>/dev/null
+ls -lh "$BUILD_DIR/bin/" 2>/dev/null || ls "$BUILD_DIR/bin/" 2>/dev/null
 echo ""
-echo "To run inference:  $BUILD_DIR/bin/llama-cli --help"
+echo "To run inference:"
+echo "  cd $BUILD_DIR/bin && ./llama-cli -h"
+echo "  cd $BUILD_DIR/bin && ./llama-infill -h"
+echo ""

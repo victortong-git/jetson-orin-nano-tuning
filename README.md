@@ -19,6 +19,20 @@ These scripts optimize memory by:
 
 Mainly intended for running LLM inference tools like [llama.cpp](https://github.com/ggerganov/llama.cpp) or [Ollama](https://ollama.com/).
 
+## llama.cpp Installation
+
+The installation script for llama.cpp can be found in the `llm_scripts/` folder:
+
+```bash
+llm_scripts/install_llamacpp.sh
+```
+
+Run with `sudo`:
+
+```bash
+sudo ./llm_scripts/install_llamacpp.sh
+```
+
 ## Monitoring
 
 If you want to use `jtop` (Jetson system monitoring tool), you have to install it first:
@@ -36,6 +50,7 @@ Services are disabled by default to free up memory. If you require a service, ru
 
 ```
 ├── docker/           - Docker containerd enable/disable
+├── llm_scripts/      - llama.cpp installation script
 ├── nvidia/           - NVIDIA nvargus-daemon enable/disable
 ├── services/         - General system services (bluetooth, lpd, ModemManager, wireplumber)
 └── system/           - System configuration (add_swapfile, disable_desktop_environment)

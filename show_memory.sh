@@ -20,6 +20,17 @@ awk '
 ' /proc/meminfo
 
 echo ""
+echo "=== Used Memory Breakdown ==="
+awk '
+/^Active:/       { printf "Active:        %s kB (%.1f MB)\n", $2, $2/1024 }
+/^Inactive:/     { printf "Inactive:      %s kB (%.1f MB)\n", $2, $2/1024 }
+/^AnonPages:/    { printf "AnonPages:     %s kB (%.1f MB)\n", $2, $2/1024 }
+/^Shmem:/        { printf "Shmem:         %s kB (%.1f MB)\n", $2, $2/1024 }
+/^KernelStack:/  { printf "KernelStack:   %s kB (%.1f MB)\n", $2, $2/1024 }
+/^SMPRecycled:/  { next }
+' /proc/meminfo
+
+echo ""
 echo "=== Top 5 Processes by Memory ==="
 printf "%-20s %15s %s\n" "USER" "MEM (MB)" "COMMAND"
 ps aux --sort=-%mem | tail -n+2 | awk 'NR<=5 { printf "%-20s %8.1f MB  %s\n", $1, $6/1024, $11 }'

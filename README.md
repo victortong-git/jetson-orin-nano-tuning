@@ -88,6 +88,12 @@ Services are disabled by default to free up memory. If you require a service, ru
 |---------|-------------|
 | Docker & containerd | Container runtime for running Docker containers |
 
+### LLM Installation
+
+| Script | Description |
+|--------|-------------|
+| `llm_scripts/install_ollama_jetson.sh` | Install Ollama with automatic JetPack detection — selects the correct GPU binary for your L4T version and sets `JETSON_JETPACK=6` for Jetson Orin Nano |
+
 ## ⚠️ Important: Reboot Required
 
 **Reboot your Jetson after running any enable/disable scripts to confirm the update persistence.**
